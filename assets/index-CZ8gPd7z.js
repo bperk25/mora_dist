@@ -463,7 +463,7 @@ br.Fragment = wc;
 br.jsx = qi;
 br.jsxs = qi;
 Bi.exports = br;
-var K = Bi.exports,
+var G = Bi.exports,
   bi = { exports: {} },
   ge = {},
   es = { exports: {} },
@@ -482,8 +482,8 @@ var K = Bi.exports,
     x.push(P);
     e: for (; 0 < z; ) {
       var H = (z - 1) >>> 1,
-        G = x[H];
-      if (0 < l(G, P)) (x[H] = P), (x[z] = G), (z = H);
+        X = x[H];
+      if (0 < l(X, P)) (x[H] = P), (x[z] = X), (z = H);
       else break e;
     }
   }
@@ -496,16 +496,16 @@ var K = Bi.exports,
       z = x.pop();
     if (z !== P) {
       x[0] = z;
-      e: for (var H = 0, G = x.length, qt = G >>> 1; H < qt; ) {
+      e: for (var H = 0, X = x.length, qt = X >>> 1; H < qt; ) {
         var hn = 2 * (H + 1) - 1,
           yl = x[hn],
           yn = hn + 1,
           bt = x[yn];
         if (0 > l(yl, z))
-          yn < G && 0 > l(bt, yl)
+          yn < X && 0 > l(bt, yl)
             ? ((x[H] = bt), (x[yn] = z), (H = yn))
             : ((x[H] = yl), (x[hn] = z), (H = hn));
-        else if (yn < G && 0 > l(bt, z)) (x[H] = bt), (x[yn] = z), (H = yn);
+        else if (yn < X && 0 > l(bt, z)) (x[H] = bt), (x[yn] = z), (H = yn);
         else break e;
       }
     }
@@ -571,9 +571,9 @@ var K = Bi.exports,
         var H = m.callback;
         if (typeof H == "function") {
           (m.callback = null), (p = m.priorityLevel);
-          var G = H(m.expirationTime <= P);
+          var X = H(m.expirationTime <= P);
           (P = e.unstable_now()),
-            typeof G == "function" ? (m.callback = G) : m === t(s) && r(s),
+            typeof X == "function" ? (m.callback = X) : m === t(s) && r(s),
             d(P);
         } else r(s);
         m = t(s);
@@ -705,28 +705,28 @@ var K = Bi.exports,
         x)
       ) {
         case 1:
-          var G = -1;
+          var X = -1;
           break;
         case 2:
-          G = 250;
+          X = 250;
           break;
         case 5:
-          G = 1073741823;
+          X = 1073741823;
           break;
         case 4:
-          G = 1e4;
+          X = 1e4;
           break;
         default:
-          G = 5e3;
+          X = 5e3;
       }
       return (
-        (G = z + G),
+        (X = z + X),
         (x = {
           id: v++,
           callback: P,
           priorityLevel: x,
           startTime: z,
-          expirationTime: G,
+          expirationTime: X,
           sortIndex: -1,
         }),
         z > H
@@ -735,7 +735,7 @@ var K = Bi.exports,
             t(s) === null &&
               x === t(c) &&
               (k ? (f(N), (N = -1)) : (k = !0), hl(h, z - H)))
-          : ((x.sortIndex = G), n(s, x), w || g || ((w = !0), vl(E))),
+          : ((x.sortIndex = X), n(s, x), w || g || ((w = !0), vl(E))),
         x
       );
     }),
@@ -4472,7 +4472,7 @@ var xr = Xe.ReactCurrentDispatcher,
   Fl = Xe.ReactCurrentBatchConfig,
   Pn = 0,
   $ = null,
-  Y = null,
+  K = null,
   Z = null,
   Kr = !1,
   Nt = !1,
@@ -4502,7 +4502,7 @@ function hu(e, n, t, r, l, o) {
     do {
       if (((Nt = !1), (Ht = 0), 25 <= o)) throw Error(y(301));
       (o += 1),
-        (Z = Y = null),
+        (Z = K = null),
         (n.updateQueue = null),
         (xr.current = td),
         (e = t(r, l));
@@ -4510,9 +4510,9 @@ function hu(e, n, t, r, l, o) {
   }
   if (
     ((xr.current = Yr),
-    (n = Y !== null && Y.next !== null),
+    (n = K !== null && K.next !== null),
     (Pn = 0),
-    (Z = Y = $ = null),
+    (Z = K = $ = null),
     (Kr = !1),
     n)
   )
@@ -4534,20 +4534,20 @@ function De() {
   return Z === null ? ($.memoizedState = Z = e) : (Z = Z.next = e), Z;
 }
 function _e() {
-  if (Y === null) {
+  if (K === null) {
     var e = $.alternate;
     e = e !== null ? e.memoizedState : null;
-  } else e = Y.next;
+  } else e = K.next;
   var n = Z === null ? $.memoizedState : Z.next;
-  if (n !== null) (Z = n), (Y = e);
+  if (n !== null) (Z = n), (K = e);
   else {
     if (e === null) throw Error(y(310));
-    (Y = e),
+    (K = e),
       (e = {
-        memoizedState: Y.memoizedState,
-        baseState: Y.baseState,
-        baseQueue: Y.baseQueue,
-        queue: Y.queue,
+        memoizedState: K.memoizedState,
+        baseState: K.baseState,
+        baseQueue: K.baseQueue,
+        queue: K.queue,
         next: null,
       }),
       Z === null ? ($.memoizedState = Z = e) : (Z = Z.next = e);
@@ -4562,7 +4562,7 @@ function Ul(e) {
     t = n.queue;
   if (t === null) throw Error(y(311));
   t.lastRenderedReducer = e;
-  var r = Y,
+  var r = K,
     l = r.baseQueue,
     o = t.pending;
   if (o !== null) {
@@ -4737,8 +4737,8 @@ function ul(e, n, t, r) {
   var l = _e();
   r = r === void 0 ? null : r;
   var o = void 0;
-  if (Y !== null) {
-    var u = Y.memoizedState;
+  if (K !== null) {
+    var u = K.memoizedState;
     if (((o = u.destroy), r !== null && vu(r, u.deps))) {
       l.memoizedState = Qt(n, t, o, r);
       return;
@@ -5012,7 +5012,7 @@ var Yr = {
     useDebugValue: wu,
     useDeferredValue: function (e) {
       var n = _e();
-      return ka(n, Y.memoizedState, e);
+      return ka(n, K.memoizedState, e);
     },
     useTransition: function () {
       var e = Ul(Wt)[0],
@@ -5041,7 +5041,7 @@ var Yr = {
     useDebugValue: wu,
     useDeferredValue: function (e) {
       var n = _e();
-      return Y === null ? (n.memoizedState = e) : ka(n, Y.memoizedState, e);
+      return K === null ? (n.memoizedState = e) : ka(n, K.memoizedState, e);
     },
     useTransition: function () {
       var e = $l(Wt)[0],
@@ -6313,7 +6313,7 @@ function id(e, n, t) {
             r &&
             ((n.child.flags |= 8192),
             n.mode & 1 &&
-              (e === null || U.current & 1 ? X === 0 && (X = 3) : Nu())),
+              (e === null || U.current & 1 ? Y === 0 && (Y = 3) : Nu())),
           n.updateQueue !== null && (n.flags |= 4),
           te(n),
           null);
@@ -6330,7 +6330,7 @@ function id(e, n, t) {
       if (((r = (n.flags & 128) !== 0), (u = o.rendering), u === null))
         if (r) vt(o, !1);
         else {
-          if (X !== 0 || (e !== null && e.flags & 128))
+          if (Y !== 0 || (e !== null && e.flags & 128))
             for (e = n.child; e !== null; ) {
               if (((u = Qr(e)), u !== null)) {
                 for (
@@ -7325,7 +7325,7 @@ var dd = Math.ceil,
   b = 0,
   me = 0,
   Wn = mn(0),
-  X = 0,
+  Y = 0,
   Kt = null,
   zn = 0,
   al = 0,
@@ -7363,7 +7363,7 @@ function Oe(e, n, t, r) {
   if (50 < Lt) throw ((Lt = 0), (jo = null), Error(y(185)));
   Xt(e, t, r),
     (!(R & 2) || e !== J) &&
-      (e === J && (!(R & 2) && (al |= t), X === 4 && be(e, b)),
+      (e === J && (!(R & 2) && (al |= t), Y === 4 && be(e, b)),
       pe(e, r),
       t === 1 && R === 0 && !(n.mode & 1) && ((rt = W() + 500), ol && vn()));
 }
@@ -7426,7 +7426,7 @@ function Ba(e, n) {
     su(),
       (Xr.current = o),
       (R = l),
-      Q !== null ? (n = 0) : ((J = null), (b = 0), (n = X));
+      Q !== null ? (n = 0) : ((J = null), (b = 0), (n = Y));
   }
   if (n !== 0) {
     if (
@@ -7643,7 +7643,7 @@ function xn(e, n) {
     ((J = e),
     (Q = e = cn(e.current, null)),
     (b = me = n),
-    (X = 0),
+    (Y = 0),
     (Kt = null),
     (Eu = al = zn = 0),
     (ae = zt = null),
@@ -7677,13 +7677,13 @@ function Ha(e, n) {
       }
       if (
         ((Pn = 0),
-        (Z = Y = $ = null),
+        (Z = K = $ = null),
         (Nt = !1),
         (Ht = 0),
         (Su.current = null),
         t === null || t.return === null)
       ) {
-        (X = 1), (Kt = n), (Q = null);
+        (Y = 1), (Kt = n), (Q = null);
         break;
       }
       e: {
@@ -7737,7 +7737,7 @@ function Ha(e, n) {
           }
         }
         (o = s = tt(s, i)),
-          X !== 4 && (X = 2),
+          Y !== 4 && (Y = 2),
           zt === null ? (zt = [o]) : zt.push(o),
           (o = u);
         do {
@@ -7780,7 +7780,7 @@ function Wa() {
   return (Xr.current = Yr), e === null ? Yr : e;
 }
 function Nu() {
-  (X === 0 || X === 3 || X === 2) && (X = 4),
+  (Y === 0 || Y === 3 || Y === 2) && (Y = 4),
     J === null || (!(zn & 268435455) && !(al & 268435455)) || be(J, b);
 }
 function Jr(e, n) {
@@ -7797,7 +7797,7 @@ function Jr(e, n) {
     }
   while (!0);
   if ((su(), (R = t), (Xr.current = r), Q !== null)) throw Error(y(261));
-  return (J = null), (b = 0), X;
+  return (J = null), (b = 0), Y;
 }
 function md() {
   for (; Q !== null; ) Qa(Q);
@@ -7823,7 +7823,7 @@ function Ka(e) {
       if (e !== null)
         (e.flags |= 32768), (e.subtreeFlags = 0), (e.deletions = null);
       else {
-        (X = 6), (Q = null);
+        (Y = 6), (Q = null);
         return;
       }
     } else if (((t = id(t, n, me)), t !== null)) {
@@ -7836,7 +7836,7 @@ function Ka(e) {
     }
     Q = n = e;
   } while (n !== null);
-  X === 0 && (X = 5);
+  Y === 0 && (Y = 5);
 }
 function wn(e, n, t) {
   var r = O,
@@ -8070,7 +8070,7 @@ function yd(e, n, t) {
     (e.pingedLanes |= e.suspendedLanes & t),
     J === e &&
       (b & t) === t &&
-      (X === 4 || (X === 3 && (b & 130023424) === b && 500 > W() - xu)
+      (Y === 4 || (Y === 3 && (b & 130023424) === b && 500 > W() - xu)
         ? xn(e, 0)
         : (Eu |= t)),
     pe(e, n);
@@ -8991,28 +8991,27 @@ var zd = bi.exports,
 (ec = Vi.createRoot), Vi.hydrateRoot;
 const Ld = "./assets/mora-logo-eF9T3KM2.svg",
   Td = () =>
-    K.jsxs("nav", {
+    G.jsxs("nav", {
       className:
-        "flex justify-around items-center py-4 fixed top-0 w-full z-10",
+        "flex justify-around items-center py-4 fixed top-0 w-full z-10 bg-[#fff]",
       children: [
-        K.jsx("div", {
+        G.jsx("div", {
           className: "h-fit pb-[-2px]",
-          children: K.jsx("img", {
+          children: G.jsx("img", {
             src: Ld,
             className: "w-28",
             alt: "mora logo",
           }),
         }),
-        K.jsxs("ul", {
+        G.jsxs("ul", {
           className: "flex",
           children: [
-            K.jsx("li", { className: "mx-4", children: "Home" }),
-            K.jsx("li", { className: "mx-4", children: "About" }),
-            K.jsx("li", { className: "mx-4", children: "Process" }),
-            K.jsx("li", { className: "mx-4", children: "Demo" }),
-            K.jsx("li", {
+            G.jsx("li", { className: "mx-4", children: "Home" }),
+            G.jsx("li", { className: "mx-4", children: "About" }),
+            G.jsx("li", { className: "mx-4", children: "Demo" }),
+            G.jsx("li", {
               className: "mx-4",
-              children: K.jsx("button", { children: "Team" }),
+              children: G.jsx("button", { children: "Team" }),
             }),
           ],
         }),
@@ -9021,30 +9020,30 @@ const Ld = "./assets/mora-logo-eF9T3KM2.svg",
   Rd =
     "data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%20512%20512'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eionicons-v5-r%3c/title%3e%3cpath%20d='M85.57,446.25H426.43a32,32,0,0,0,28.17-47.17L284.18,82.58c-12.09-22.44-44.27-22.44-56.36,0L57.4,399.08A32,32,0,0,0,85.57,446.25Z'%20style='fill:none;stroke:%23000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/%3e%3cpath%20d='M250.26,195.39l5.74,122,5.73-121.95a5.74,5.74,0,0,0-5.79-6h0A5.74,5.74,0,0,0,250.26,195.39Z'%20style='fill:none;stroke:%23000000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px'/%3e%3cpath%20d='M256,397.25a20,20,0,1,1,20-20A20,20,0,0,1,256,397.25Z'/%3e%3c/svg%3e",
   Od = () =>
-    K.jsx("section", {
+    G.jsx("section", {
       className:
-        "flex min-h-screen w-full justify-center content-center items-center pt-24",
-      children: K.jsxs("div", {
-        className: `flex-col flex justify-between items-center border-2 border-[#ddd] bg-[#f8f8f8] 
-      max-w-[32] w-[80vw]2 h-auto py-36 hover:bg-[#f9f9f9] hover:shadow-md`,
+        "flex min-h-screen w-full justify-center content-center items-center pt-16",
+      children: G.jsxs("div", {
+        className: `flex-col text-center flex justify-between items-center border-2 border-[#ddd] bg-[#f8f8f8] 
+      max-w-[64rem] w-[80vw]2 h-auto max-h-[48rem] py-36 hover:bg-[#f9f9f9] hover:shadow-md`,
         children: [
-          K.jsx("img", {
+          G.jsx("img", {
             src: Rd,
             className: "w-64 mb-8 animate-pulse color-[#E023F9]",
             alt: "",
           }),
-          K.jsx("h1", {
-            className: "text-4xl text-[#E023F9]",
-            children: "mora website under construction!!!",
+          G.jsx("h1", {
+            className: "text-4xl max-w-[48rem] text-[#E023F9]",
+            children: "mora website under construction!",
           }),
         ],
       }),
     }),
   Md = () =>
-    K.jsxs("div", {
+    G.jsxs("div", {
       className: "w-full h-screen",
-      children: [K.jsx(Td, {}), K.jsx(Od, {})],
+      children: [G.jsx(Td, {}), G.jsx(Od, {})],
     });
 ec(document.getElementById("root")).render(
-  K.jsx(Vo.StrictMode, { children: K.jsx(Md, {}) })
+  G.jsx(Vo.StrictMode, { children: G.jsx(Md, {}) })
 );
